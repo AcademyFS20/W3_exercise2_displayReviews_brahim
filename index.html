@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,51 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Reviews</h1>
-    <div>
-        <img>
-    </div>
-    <div>
-        <h3></h3>
-        <h3></h3>
-    </div>
-    <div>
-        <i class="fa-solid fa-caret-left"></i>
-        <i class="fa-solid fa-caret-right"></i>
-        <button>Who's going to suprise me?</button>
-    </div>
+    <main>
+        <section class="container">
+            <div class="container__title">
+                <h2 class="container__title container__text">Reviews</h2>
+                <div class="container__underline"></div>
+            </div>
+        </section>
+
+
+        <article class="review">
+            <div class="review__img">
+                <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGJsYWNrJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    class="review__img--person" id="person-img" />
+            </div>
+
+            <h4 class="review__author" id="author">Sara bentamar</h4>
+            <p class="review__job" id="job">UX designer</p>
+            <p class="review__info" id="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+                expedita
+                quod exercitationem saepe. Ut, quisquam officia! Nesciunt voluptas, dolorum, qui incidunt quam
+                laboriosam,
+                repellat harum provident sint quae molestias esse?
+                aperiam voluptas impedit illo unde quis, vitae, deleniti necessitatibus architecto inventore quisquam!
+                Deleniti quam provident rerum!</p>
+
+            <div class="review__button">
+                <button class="review__button--btn prev">
+                    <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <button class="review__button--btn next">
+                    <i class="fa-solid fa-caret-right"></i>
+                </button>
+            </div>
+
+            <div class="review__random">
+                <button class="review__random--btn random">
+                    Who's going to suprise me? </button>
+            </div>
+        </article>
+    </main>
+
+
+<script src="js/script.js"></script>
 </body>
+
 </html>
