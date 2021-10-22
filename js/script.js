@@ -1,3 +1,4 @@
+
 const reviews = [
     {
       id: 1,
@@ -37,12 +38,64 @@ const reviews = [
     },
   ];
 
-  const previous = documet.querySelector('."review__button--btn prev');
-  const next = document.querySelector('.review__button--btn next');
-  const random = document.querySelector('.review__random--btn random');
+//declaring all the variables
+// const previousbtn = document.getElementsByClassName("review__button--btn prev");
+// const nextbtn = document.getElementsByClassName("review__button--btn next");
+// const randombtn = document.getElementsByClassName("review__random--btn random");
+const previousbtn = document.getElementById("prev");
+const nextbtn = document.getElementById("next");
+const randombtn = document.getElementById("random");
+let authorImage = document.querySelector("#person-img");
+let authorName = document.querySelector('#author');
+let authorJob = document.querySelector("#job");
+let authorReview = document.querySelector("#info");
 
-  console.log(previous);
-  console.log(next);
-  console.log(random);
+// console.log
+console.log(previousbtn);
+console.log(nextbtn);
+console.log(randombtn);
+console.log(authorImage);
+console.log(authorName);
+console.log(authorJob);
+console.log(authorReview);
 
+let position = 0;
+
+// default 
+window.addEventListener('DOMContentLoaded', () => {
+ showPerson(position);
+});
+
+
+function showPerson(person)
+{
+  const item = reviews[person];
+ 
+   const {id,name,img:image,text,job} = item;
+
+   authorImage.src = image;
+   authorName.textContent = name;
+   authorJob.textContent = job;
+   authorReview.textContent = text;
+};
+
+previousbtn.addEventListener('click', ()=> {
+let person = position--;
+showPerson(position);
+if (person < 0){
+  let person = 3;}
+});
+
+
+nextbtn.addEventListener('click', ()=>{
+  let person = position++;
+showPerson(position);
+if (person >= 4){
+     let position = 0;}
+});
+
+randombtn.addEventListener('click', ()=>{
+  let person = Math.floor(Math.random() * (3 - 0 + 1) ) + 0;
+  showPerson(person);
+});
 
