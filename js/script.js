@@ -39,12 +39,9 @@ const reviews = [
   ];
 
 //declaring all the variables
-// const previousbtn = document.getElementsByClassName("review__button--btn prev");
-// const nextbtn = document.getElementsByClassName("review__button--btn next");
-// const randombtn = document.getElementsByClassName("review__random--btn random");
-const previousbtn = document.getElementById("prev");
-const nextbtn = document.getElementById("next");
-const randombtn = document.getElementById("random");
+const previousbtn = document.querySelector(".prev");
+const nextbtn = document.querySelector(".next");
+const randombtn = document.querySelector(".random");
 let authorImage = document.querySelector("#person-img");
 let authorName = document.querySelector('#author');
 let authorJob = document.querySelector("#job");
@@ -70,8 +67,8 @@ window.addEventListener('DOMContentLoaded', () => {
 function showPerson(person)
 {
   const item = reviews[person];
- 
-   const {id,name,img:image,text,job} = item;
+//  item distruction so I can be avaible to call each 
+  const {id,name,img:image,text,job} = item;
 
    authorImage.src = image;
    authorName.textContent = name;
@@ -80,22 +77,23 @@ function showPerson(person)
 };
 
 previousbtn.addEventListener('click', ()=> {
-let person = position--;
+position--;
+if (position < 0){
+  position = reviews.length -1};
 showPerson(position);
-if (person < 0){
-  let person = 3;}
+
 });
 
 
 nextbtn.addEventListener('click', ()=>{
-  let person = position++;
+position++;
+if (position > reviews.length -1){
+     position = 0};
 showPerson(position);
-if (person >= 4){
-     let position = 0;}
 });
 
 randombtn.addEventListener('click', ()=>{
-  let person = Math.floor(Math.random() * (3 - 0 + 1) ) + 0;
-  showPerson(person);
+  position= Math.floor(Math.random() * reviews.length);
+  showPerson(position);
 });
 
